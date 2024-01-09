@@ -1,0 +1,131 @@
+@font-face {
+    font-family: Brusio;
+    src: url('../content/fonts/Brusio.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: Resolve-Semilight;
+    src: url('../content/fonts/Resolve-Semilight.woff2') format('woff2');
+}
+
+:root{
+    --accent-color: #d1bda1;
+    --darker-color: #161616;
+    --lighter-color: #272c33;
+    --white-color: #fcfcfc;
+    --highlight-font: Brusio;
+    --regular-font: Resolve-Semilight;
+}
+
+.imgtest{
+    width: 10px;
+}
+
+
+body{
+    background: var(--lighter-color);
+}
+
+.header-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: var(--darker-color);
+}
+
+.ribbon-content *{
+    background: var(--accent-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 0;
+}
+
+.ribbon-content img{
+    max-width: 1rem;
+    padding-right: 24px;
+}
+
+.ribbon-content a{
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.ribbon-text{
+    font-family: var(--regular-font);
+}
+
+.header-main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 1.5rem;
+}
+
+.header-list{
+    display: flex;
+    padding: 0 15px;
+}
+
+.header-list li{
+    padding: 0 20px;
+    margin: 0 15px;
+    font-family: var(--highlight-font);
+    font-size: 2.5rem;
+}
+
+.header-list a{
+    text-decoration: none;
+    color: var(--lighter-color);
+    transition: color .3s;
+}
+
+.header-list a:hover{
+    color: var(--white-color);
+}
+
+.header-option{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.icon{
+    fill: var(--accent-color);
+    width: .7rem;
+    height: .7rem;
+    padding: 0 0.3rem;
+}
+
+.main-latest{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 120%;
+    overflow: visible;
+}
+
+.latest-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.latest-item{
+    display: flex;
+    width: 48%;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    padding: 40px 20px;
+}
+
+.latest-item iframe{
+    width: 640px;
+    height: 360px;
+    -webkit-box-shadow: -10px 10px 0px 0px rgba(255,255,255,1);
+    -moz-box-shadow: -10px 10px 0px 0px rgba(255,255,255,1);
+    box-shadow: -10px 10px 0px 0px rgba(255,255,255,1);
+}
