@@ -1,3 +1,5 @@
+/* Importing the two main font faces */
+
 @font-face {
     font-family: Brusio;
     src: url('../content/fonts/Brusio.woff2') format('woff2');
@@ -8,22 +10,26 @@
     src: url('../content/fonts/Resolve-Semilight.woff2') format('woff2');
 }
 
+/* Vars containing default colors and fonts*/
+
 :root{
     --accent-color: #d1bda1;
     --darker-color: #161616;
     --lighter-color: #272c33;
+    --lighter-color-a: #272c33f1;
+    --link-inactive: #3e444d;
+    --darkest-color: #0e0e0e;
     --white-color: #fcfcfc;
     --highlight-font: Brusio;
     --regular-font: Resolve-Semilight;
 }
 
-.imgtest{
-    width: 10px;
-}
-
-
 body{
     background: var(--lighter-color);
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .header-wrapper{
@@ -31,8 +37,14 @@ body{
     flex-direction: column;
     width: 100%;
     background: var(--darker-color);
+    position: relative;
+    z-index: 1;
 }
 
+
+/* Header content start */
+
+/* Setup shortcut start */
 .ribbon-content *{
     background: var(--accent-color);
     display: flex;
@@ -43,8 +55,8 @@ body{
 }
 
 .ribbon-content img{
-    max-width: 1rem;
-    padding-right: 24px;
+    max-width: 1.5rem;
+    padding-right: 1rem;
 }
 
 .ribbon-content a{
@@ -52,33 +64,64 @@ body{
     color: var(--white-color);
 }
 
-.ribbon-text{
-    font-family: var(--regular-font);
+.ribbon-content a:hover{
+    text-decoration: underline;
 }
 
+.ribbon-text{
+    font-family: var(--regular-font);
+    font-size: 1.1rem;
+}
+/* Setup shortcut end */
+
+/* Main header start */
 .header-main{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 3rem 1.5rem;
+    padding: 2rem;
+    margin-bottom: 50px;
+}
+
+.header-main ul{
+    flex-direction: row;
+    justify-content: end;
+}
+
+.header-items i{
+    box-sizing: border-box;
+    padding-right: 1rem;
+    justify-content: center;
+}
+
+.font-dot{
+    font-size: 0.5rem;
+}
+
+.font-dot::before{
+    content: url("fas fa-circle");
+    font-family: "Font Awesome 5 Free";
+}
+
+.font-cross{
+    font-size: 1.3rem;
 }
 
 .header-list{
     display: flex;
-    padding: 0 15px;
 }
 
 .header-list li{
-    padding: 0 20px;
-    margin: 0 15px;
     font-family: var(--highlight-font);
-    font-size: 2.5rem;
+    font-size: 2.25rem;
+    display: flex;
+    align-items: center;
 }
 
 .header-list a{
     text-decoration: none;
-    color: var(--lighter-color);
+    color: var(--link-inactive);
     transition: color .3s;
 }
 
@@ -87,9 +130,16 @@ body{
 }
 
 .header-option{
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    margin: 16px;
+}
+
+.option-active{
+    color: var(--white-color);
+    transform: rotate(45deg);
+}
+
+.option-inactive{
+    color: var(--accent-color);
 }
 
 .icon{
@@ -102,30 +152,209 @@ body{
 .main-latest{
     display: flex;
     flex-direction: column;
-    width: 100%;
     align-items: center;
-    height: 120%;
-    overflow: visible;
+    width: 100%;
+    max-width: 1920px;
+    margin: -90px 0;
 }
 
 .latest-wrapper{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bg-group{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 460px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ftv-name{
+    background: url("../content/bg/futives-text-outline_transparent-bg.png");
+    background-repeat: repeat-y;
+    background-size: 70%;
+    opacity: 0.45;
+}
+
+.ftv-dots{
+    background: url("../content/bg/dots-crosses_transparent-bg.webp");
+    background-repeat: repeat-y;
+}
+
+.latest-group{
+    position: absolute;
+    width: 98%;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.hidden-bg{
+    width: 50%;
+    height: 100%;
+}
+
+.bg-left{
+    background-position: left;
+}
+
+.bg-right{
+    background-position: right;
 }
 
 .latest-item{
+    width: 100%;
+    height: 360px;
+    padding: 50px 0;
     display: flex;
-    width: 48%;
     justify-content: center;
-    align-items: center;
-    overflow: visible;
-    padding: 40px 20px;
 }
 
 .latest-item iframe{
-    width: 640px;
-    height: 360px;
+    border: 1px solid var(--lighter-color);
+    height: 100%;
+    width: 90%;
     -webkit-box-shadow: -10px 10px 0px 0px rgba(255,255,255,1);
     -moz-box-shadow: -10px 10px 0px 0px rgba(255,255,255,1);
     box-shadow: -10px 10px 0px 0px rgba(255,255,255,1);
+}
+
+.main-shop{
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background: var(--darker-color);
+    margin-top: -90px;
+}
+
+.shop-wrapper{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+}
+
+.bg-shop{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.shop-label{
+    font-size: 3rem;
+    background: var(--lighter-color);
+    color: var(--white-color);
+    font-family: var(--highlight-font);
+    padding: 0.9rem 1.5rem;
+    margin-bottom: 50px;
+    -webkit-box-shadow: -10px 10px 0px 0px rgba(255,255,255,1);
+    -moz-box-shadow: -10px 10px 0px 0px rgba(255,255,255,1);
+    box-shadow: -10px 10px 0px 0px rgba(255,255,255,1);
+}
+
+.shop-latest{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-item{
+    position: relative;
+    background-color: var(--darkest-color);
+    width: 27%;
+    margin: 0.9rem;
+    text-decoration: none;
+}
+
+
+.shop-item h1{
+    padding: 10px;
+    background: var(--accent-color);
+    font-family: var(--highlight-font);
+    color: var(--white-color);
+    text-shadow: 0px 0px 6px rgba(0,0,0,0.58);
+    text-align: center;
+    font-size: 2.3rem;
+}
+
+.shop-item img{
+    max-width: 100%;
+}
+
+.item-status{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 40%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.item-status h2{
+    text-align: center;
+    color: var(--white-color);
+    text-shadow: 0px 0px 6px rgba(0,0,0,0.58);
+    font-family: var(--highlight-font);
+    font-size: 3rem;
+    padding: 0.9rem;
+    background: var(--lighter-color-a);
+}
+
+.shop-item:hover .item-status{
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+/* Three links below the shop highlights */
+
+.shop-links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-links a{
+    text-decoration: none;
+    margin: 0.5rem 0;
+}
+
+.shop-links h2{
+    font-size: 2rem;
+    text-align: center;
+    font-family: var(--highlight-font);
+    color: var(--white-color);
+    text-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+    padding: 0.6rem;
+    transition: background 0.3s ease, text-shadow 0.3s ease;
+    background: var(--accent-color);
+    border: 0.2rem solid var(--accent-color);
+}
+
+.shop-links h2:hover{
+    transition: background 0.3s ease, text-shadow 0.3s ease;
+    background: var(--darkest-color);
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.5);
 }

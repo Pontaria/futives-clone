@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/3fda1a6ff6.js" crossorigin="anonymous"></script>
+    <title>Fugitives</title>
 </head>
 <body>
     <header>
@@ -20,70 +21,153 @@
             </div>
 
             <!-- logo futives +menu start-->
-            <div class="header-main">
+            <nav class="header-main">
          
                 <div class="header-items">
                     <a href=""><img src="./content/img/Futives-Horizontal-Light-300x58.png" alt=""></a>
                 </div>
                 <div class="header-items">
                     <ul class="header-list">
-                        <a href="">
-                            <li class="header-option">
-                                <svg class="icon"><use xlink:href="content/img/icons.svg#circledot"></use></svg>
-                                Home</li>
+                        <a href="" class="header-option">
+                            <li>
+                                <i class="fas fa-plus"></i>
+                                Home
+                            </li>
                         </a>
-                        <a href="">
-                            <li class="header-option">
-                                <svg class="icon"><use xlink:href="content/img/icons.svg#circledot"></use></svg>
-                                Games</li>
+                        <a href="" class="header-option">
+                            <li>
+                                <i class="fas font-dot option-inactive"></i>
+                                Games
+                            </li>
                         </a>
-                        <a href="">
-                            <li class="header-option">
-                                <svg class="icon"><use xlink:href="content/img/icons.svg#circledot"></use></svg>
-                                Gear</li>
+                        <a href="" class="header-option">
+                            <li>
+                                <i class="fas fa-circle font-dot option-inactive"></i>
+                                Gear
+                            </li>
                         </a>
-                        <a href="">
-                            <li class="header-option">
-                                <svg class="icon"><use xlink:href="content/img/icons.svg#circledot"></use></svg>
-                                Donate</li>
+                        <a href="" class="header-option">
+                            <li>
+                                <i class="fas fa-circle font-dot option-inactive"></i>
+                                Donate
+                            </li>
                         </a>
-                        <a href="">
-                            <li class="header-option">
-                                <svg class="icon"><use xlink:href="content/img/icons.svg#circledot"></use></svg>
-                                Contact</li>
+                        <a href="" class="header-option">
+                            <li>
+                                <i class="fas fa-circle font-dot option-inactive"></i>
+                                Contact
+                            </li>
                         </a>
                     </ul>
                 </div>
-            </div>
+            </nav>
             <!-- logo futives +menu end-->
         </section>
     </header>
 
-    <main>
+    <main class="main-latest">
 
-        <!-- yt widget + twitch wiidget -->
-        <section class="main-latest">
-            <div class="latest-wrapper">
-                <div class=""></div>
-                <div class=""></div>
+        <!-- section containing iframes for latest yt video and twitch channel -->
+        <section class="latest-wrapper">
+            <!-- empty divs for the two different backgrounds -->
+            <div class="bg-group">
+                <div class="hidden-bg ftv-dots bg-left"></div>
+                <div class="hidden-bg ftv-name bg-right"></div>
             </div>
-            <div class="latest-wrapper">
+            
+            <!-- yt widget + twitch widget -->
+            <div class="latest-group">
                 <div class="latest-item">
-                    <iframe src="https://www.youtube.com/embed/STt_0_eEkIo?si=laGf6UQSXUyM1jM2&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube-nocookie.com/embed/bbhdj8p4KpA?autoplay=0&amp;controls=1&amp;cc_load_policy=0&amp;enablejsapi=0&amp;fs=1&amp;hd=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;rel=0&amp;vq=hd1080" class="elementor-video" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" width="640" height="360" id="yt_embed"></iframe>
                 </div>
                 <div class="latest-item">
-                    <iframe src="https://www.youtube.com/embed/STt_0_eEkIo?si=laGf6UQSXUyM1jM2&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
+                    <iframe src="https://player.twitch.tv/?channel=futives&parent=127.0.0.1" height="640" width="460" allowfullscreen></iframe>
+                </div>                
             </div>
         </section>
 
+        <!-- shop section -->
         <section class="main-shop">
-            <h1>Shoperino</h1>
+
+            <!-- background divs -->
+            <div class="bg-shop">
+                <div class="hidden-bg ftv-name bg-left"></div>
+                <div class="hidden-bg ftv-dots bg-right"></div>
+            </div>
+            
+            <!-- shop content -->
+            <section class="shop-wrapper">
+                <!-- shop label -->
+                <div class="shop-label">
+                    <h1>Shop</h1>
+                </div>
+
+                <!-- three most recent items -->
+                <div class="shop-latest">
+                    <!-- three item "cards" -->
+                    <a href="" class="shop-item">
+                        <div>
+                            <div class="item-title">
+                                <h1>Wack T-shirt</h1>
+                            </div>
+                            <div class="item-img"><img src="./content/img/final-tee-back-mock-768x768.webp" alt=""></div>
+                            <div class="item-status">
+                                <h2>sold out</h2>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="" class="shop-item">
+                        <div>
+                            <div class="item-title">
+                                <h1>Wack T-shirt</h1>
+                            </div>
+                            <div class="item-img"><img src="./content/img/final-tee-back-mock-768x768.webp" alt=""></div>
+                            <div class="item-status">
+                                <h2>sold out</h2>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="" class="shop-item">
+                        <div>
+                            <div class="item-title">
+                                <h1>Wack T-shirt</h1>
+                            </div>
+                            <div class="item-img"><img src="./content/img/final-tee-back-mock-768x768.webp" alt=""></div>
+                            <div class="item-status">
+                                <h2>sold out</h2>
+                            </div>
+                        </div>
+                    </a>
+
+
+
+                </div>
+
+                <div class="shop-links">
+                    <a href="">
+                        <div class="shop-merch">
+                            <h2>View all merch</h2>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="shop-merch">
+                            <h2>View my specs and gear</h2>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="shop-merch">
+                            <h2>View my classes and settings</h2>
+                        </div>
+                    </a>
+                </div>
+                <!-- shop end -->
+            </section>
+
         </section>
+        <!-- shop section end -->
 
     </main>
 
-    <section></section>
     <footer></footer>
 </body>
 </html>
